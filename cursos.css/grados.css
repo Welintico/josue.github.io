@@ -1,0 +1,195 @@
+/* Estilos básicos del body */
+body {
+    font-family: sans-serif; /* O elige una fuente específica */
+    background-color: #e0f2f7; /* Fondo azul claro */
+    margin: 0; 
+    padding: 20px 0; /* Relleno vertical */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los hijos directos horizontalmente */
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura completa de la ventana */
+    box-sizing: border-box;
+}
+
+/* Contenedor para el contenido principal (formulario/tabla) */
+.container {
+    background-color: #ffffff; /* Fondo blanco para el área de contenido si es necesario */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil opcional */
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    max-width: 900px; /* Ancho máximo */
+    position: relative; /* Necesario para el posicionamiento absoluto de la búsqueda */
+    /* margin-top: 20px; Eliminado, el margen del título manejará el espaciado */
+    box-sizing: border-box;
+}
+
+/* Estilos del título */
+h2.page-title { /* Añade class="page-title" a tu etiqueta H2 */
+    /* width: 100%; Deja que flexbox centre el bloque */
+    text-align: center; /* Centra el texto dentro del bloque */
+    /* --- BEGIN EDIT --- */
+    color: #000000; /* Texto blanco */
+    /* --- END EDIT --- */
+    font-size: 2em; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    margin-top: 20px; /* Espacio sobre el título */
+    margin-bottom: 30px; /* Espacio debajo del título, antes del contenedor */
+    padding: 0 20px; /* Añade relleno horizontal si es necesario */
+    box-sizing: border-box;
+}
+
+/* Estilos del input de búsqueda (básico) */
+.search-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Esquinas redondeadas */
+    font-size: 0.9em;
+    width: 200px; /* Ajusta según sea necesario */
+}
+
+/* Estilos de la tabla */
+table.attendance-table { /* Añade class="attendance-table" a tu tabla */
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre celdas */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 1px solid black; /* Borde exterior para la tabla */
+}
+
+.attendance-table th,
+.attendance-table td {
+    border: 1px solid black; /* Borde para todas las celdas */
+    padding: 12px 15px; /* Relleno dentro de las celdas */
+    text-align: left;
+    vertical-align: middle; /* Alinea el texto verticalmente */
+    background-color: #ffffff; /* Establece el fondo de celda predeterminado en blanco */
+}
+
+.attendance-table th {
+    /* --- BEGIN EDIT --- */
+    background-color: #ffffff; /* Encabezado blanco */
+    color: #333; /* Texto oscuro para contraste */
+    /* --- END EDIT --- */
+    font-weight: bold;
+    text-transform: uppercase; /* Texto del encabezado en mayúsculas */
+    font-size: 0.9em;
+}
+
+.attendance-table tr:nth-child(even) td { /* Apunta específicamente a td para filas alternas */
+    background-color: #f8f8f8; /* Opcional: fondo ligeramente diferente para filas pares (sobrescribe el blanco para estas celdas) */
+}
+
+.attendance-table td input[type="text"] { /* Estilo para los campos de entrada dentro de la tabla */
+    width: 90%; /* Hace que el input llene la mayor parte de la celda */
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Incluye relleno/borde en el ancho */
+}
+
+
+/* Estilos del botón */
+.submit-btn { /* Añade class="submit-btn" a tu botón */
+    display: block; /* Conviértelo en un elemento de bloque */
+    margin: 20px auto 0 auto; /* Centra el botón debajo de la tabla */
+    background-color: #1976d2; /* Fondo azul oscuro */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px; /* Esquinas redondeadas */
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Efecto hover suave */
+}
+
+.submit-btn:hover {
+    background-color: #1565c0; /* Azul ligeramente más oscuro al pasar el ratón */
+}
+
+
+/* Contenedor principal de áreas */
+.areas-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Título de Áreas */
+.areas-title {
+    background-color: #000080;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Estilo para cada área */
+.area-item {
+    position: relative;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.area-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #5b9bd5;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.area-button:hover {
+    background-color: #4a8cc7;
+}
+
+/* Flecha desplegable */
+.area-button::after {
+    content: '→';
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+/* Menú desplegable */
+.submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    min-width: 200px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.submenu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.submenu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Mostrar submenu al hover */
+.area-item:hover .submenu {
+    display: block;
+}
